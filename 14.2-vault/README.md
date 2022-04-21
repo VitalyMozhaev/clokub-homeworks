@@ -124,7 +124,7 @@ kubectl port-forward --address 0.0.0.0 pod/14.2-netology-vault 8200
 
 Результат:
 
-Screen
+![](https://github.com/VitalyMozhaev/clokub-homeworks/blob/main/14.2-vault/vault_hvac.png)
 
 ## Задача 2 (*): Работа с секретами внутри модуля
 
