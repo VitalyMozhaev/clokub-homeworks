@@ -82,7 +82,7 @@ kubectl get serviceaccount default -o json
 
 ### Как выгрузить сервис-акаунты и сохранить его в файл?
 
-В формате YAML:
+В формате YAML (только один сервис-аккаунт: netology):
 ```bash
 kubectl get serviceaccount netology -o yaml > netology.yml
 cat netology.yml
@@ -98,7 +98,7 @@ secrets:
 - name: netology-token-58szc
 ```
 
-В формате JSON:
+В формате JSON (все сервис-аккаунты):
 ```bash
 kubectl get serviceaccounts -o json > serviceaccounts.json
 cat serviceaccounts.json
