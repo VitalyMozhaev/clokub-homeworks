@@ -24,6 +24,48 @@ Resource terraform для ЯО
 - [Route table](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/vpc_route_table)
 - [Compute Instance](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/compute_instance)
 ---
+
+# Подготовка:
+```bash
+# Создаём каталог
+mkdir -p /home/hwuser/terraform/1.1.9/
+cd /home/hwuser/terraform/1.1.9/
+
+# Загружаем архив
+wget https://hashicorp-releases.website.yandexcloud.net/terraform/1.1.9/terraform_1.1.9_linux_amd64.zip
+
+# Распаковываем
+sudo unzip terraform_1.1.9_linux_amd64.zip -d /usr/bin
+Archive:  terraform_1.1.9_linux_amd64.zip
+  inflating: /usr/bin/terraform
+  
+# Делаем симлинк
+# sudo ln -s /home/hwuser/terraform/1.1.9/terraform /usr/bin/terraform
+
+# Проверяем
+terraform -v
+Terraform v1.1.9
+on linux_amd64
+```
+
+Далее создаём рабочую директорию:
+```
+mkdir ~/cloud-terraform
+```
+
+Создаём файл конфигурации Terraform CLI (~/.terraformrc):
+```
+provider_installation {
+  network_mirror {
+    url = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
+```
+
 ## Задание 2*. AWS (необязательное к выполнению)
 
 1. Создать VPC.
