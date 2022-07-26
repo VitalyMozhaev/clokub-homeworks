@@ -42,7 +42,6 @@ resource "yandex_compute_instance" "vm-public" {
   network_interface {
     subnet_id  = yandex_vpc_subnet.subnet-public.id
     nat        = true
-    #ip_address = "192.168.10.02"
   }
 
   metadata = {
@@ -67,7 +66,6 @@ resource "yandex_compute_instance" "vm-private" {
 
   network_interface {
     subnet_id  = yandex_vpc_subnet.subnet-private.id
-    #ip_address = "192.168.20.02"
   }
 
   metadata = {
